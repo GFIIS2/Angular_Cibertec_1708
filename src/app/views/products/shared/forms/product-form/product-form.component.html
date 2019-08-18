@@ -1,0 +1,43 @@
+<form #productForm="ngForm">
+    <!-- <pre>{{ productForm.value | json}}</pre> -->
+    <div class="form-group">
+      <label>Nombre</label>
+      <input type="text" class="form-control" placeholder="Nombre"
+        [class.is-invalid]="name.touched && name.invalid"        
+        [(ngModel)]="model.name" #name="ngModel" name="name" required minlength="6" >
+        <div class="invalid-feedback">
+            El nombre es requerido
+        </div>
+    </div>
+    <div class="form-group">
+      <label>Detalle</label>
+      <textarea class="form-control" placeholder="Detail" 
+      [class.is-invalid]="detail.touched && detail.invalid"        
+      [(ngModel)]="model.detail" #detail="ngModel" name="detail" required >
+      </textarea>
+      <div class="invalid-feedback">
+          El detalle es requerido
+      </div>
+    </div>  
+    <div class="form-group">
+      <label>Precio</label>
+      <input type="text" class="form-control" placeholder="Precio" 
+      [class.is-invalid]="price.touched && price.invalid"        
+      [(ngModel)]="model.price" #price="ngModel" name="price" required  >
+      <div class="invalid-feedback">
+          El precio es requerido
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Stock</label>
+      <input type="text" class="form-control" placeholder="Stock" 
+      [class.is-invalid]="stock.touched && stock.invalid"        
+      [(ngModel)]="model.stock" #stock="ngModel" name="stock" required >
+      <div class="invalid-feedback">
+          El stock es requerido
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-link mr-3" (click)="onCancel()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="onSubmit(productForm)" >{{ buttonTitle }}</button>
+</form>

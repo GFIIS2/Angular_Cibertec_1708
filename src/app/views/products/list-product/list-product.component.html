@@ -1,0 +1,27 @@
+<div>
+    <a [routerLink]="['/products/create']" class="btn btn-info">Crear producto</a>
+</div>
+<div>
+    <button (click)="onSort('name')">Ordernar por nombre</button>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Acciones</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of allProducts; let i = index;">
+            <th scope="row">{{ prod.id }}</th>            
+            <td>{{ prod.name | shortText : 10 }}</td>
+            <th scope="row">{{ prod.detail }}</th>
+            <th scope="row">{{ prod.price }}</th>
+            <th scope="row">{{ prod.stock }}</th>
+            <td>
+                <button class="btn btn-sm btn-info" type="button">Deshabilitar</button>
+                <a [routerLink]="['/products', prod.id]" class="btn btn-sm btn-primary" type="button">Ver detalles</a>
+                <button class="btn btn-sm btn-danger" (click)="onRemove(prod.id)" type="button">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

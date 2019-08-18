@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "name": "prueba6",
+      "detail": "prueba detalle",
+      "price": "12",
+      "stock": "12",
+      "id": 4
+    },
+    {
+      "name": "PruebaDemo",
+      "detail": "es una prueba de un demo",
+      "price": "159",
+      "stock": "45",
+      "id": 5
+    },
+    {
+      "name": "Prueba 4",
+      "detail": "prueba 4",
+      "price": "41",
+      "stock": "22",
+      "id": 6
+    },
+    {
+      "name": "prueba99",
+      "detail": "detalle",
+      "price": "12",
+      "stock": "12",
+      "id": 7
+    }
+  ]
+}
